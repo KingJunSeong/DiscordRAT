@@ -1,4 +1,6 @@
 # DiscordRAT
 discordRAT
 
-공부 목적으로만 사용해주세요. 악용할 경우 모든 책임은 자신이 부담합니다
+This program uses the discord.net library to rat (remote access trojan) your victims computer. You can control it in a discord server
+
+Please don't abuse it.
